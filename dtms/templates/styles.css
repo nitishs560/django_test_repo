@@ -1,0 +1,48 @@
+.form-control-primary{
+	margin: 10px;
+	opacity: 0.2;
+	border-radius: 2px;
+	margin-bottom: 20px;
+}
+
+.sidebar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom:0;
+	z-index:100;
+	padding: 70px 0 0 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #A9A9A9;
+  	
+	
+}
+.sidebar-left{
+	position:sticky;
+	top:0;
+	height: calc(100vh - 70px);
+
+}
+ 
+.sidebar-nav li.nav-link
+{
+	color: #333;
+	font-weight: 500;
+}
+
+.table{
+
+	top: 20;
+	left:20;
+
+}
+
+main{
+	padding:90px;
+	margin:200px;
+}
+
+main.card{
+	margin-bottom: 20px;
+}
