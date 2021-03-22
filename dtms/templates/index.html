@@ -1,5 +1,7 @@
 
 <!doctype html>
+
+	{% load static %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -25,7 +27,7 @@
           <a class="nav-link active" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Activity</a>
+          <a class="nav-link" href="/activity">Activity</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Health</a>
@@ -65,14 +67,14 @@
 						</svg>Host</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+					    <a class="nav-link" href="/home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
 					  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-					</svg>Link 3</a>
+					</svg>Host Table</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="#" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+					    <a class="nav-link" href="/index" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
 						  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-						</svg>Link 4</a>
+						</svg>UTM Table</a>
 					  </li>
 					</ul>
     				
@@ -82,23 +84,32 @@
 
  <!--Main--> 
  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
- <h3> UTM Table </h3>
+ <!-- <h3> UTM Table </h3> -->
  <hr>
     <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand"></a>
+  <h3> UTM Table </h3>
+  <br>
+  <br>
+  <br>
+  <br>
   <form class="form-inline">
   	<div>
+  		<br>
+  <br><br>
+  <br><br>
+  <br>
     <input type="text" placeholder="Search IP" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </div>
   </form>
 <br>
-<div class="card" style="width: 15rem;">
+<!-- <div class="card" style="width: 15rem;">
   <div class="card-body">
     <h5 class="card-title">Create a Firewall Rule</h5>
     <a href="#" class="btn btn-primary">Create</a>
   </div>
-</div>
+</div> -->
 </nav>
 <br>
  <div class="table-responsive">
@@ -113,27 +124,30 @@
     </tr>
   </thead>
   <tbody>
+  {% for data in datalist%}
     <tr>
-      <th scope="row">192.168.56.101</th>
+      <th scope="row">{{data.1}}</th>
       <td>141.98.81.150</td>
-      <td>2020-07-05 07:14:03,234</td>
-      <td>@mdo</td>
-      <td>22</td>
+      <td>{{data.0}}</td>
+      <td>SSH</td>
+      <td>{{data.2}}</td>
     </tr>
-    <tr>
-      <th scope="row">141.98.81.150</th>
-      <td>192.168.56.101</td>
-      <td>2020-07-05 07:15:01,600</td>
-      <td>@fat</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th scope="row">192.168.56.102</th>
-      <td>141.98.81.150</td>
-      <td>2020-07-05 07:15:01,600</td>
-      <td>@twitter</td>
-      <td>22</td>
-    </tr>
+  {% endfor %}
+<!--    <tr>-->
+<!--      <th scope="row">141.98.81.150</th>-->
+<!--      <td>192.168.56.101</td>-->
+<!--      <td>2020-07-05 07:15:01,600</td>-->
+<!--      <td>@fat</td>-->
+<!--      <td>22</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">192.168.56.102</th>-->
+<!--      <td>141.98.81.150</td>-->
+<!--      <td>2020-07-05 07:15:01,600</td>-->
+<!--      <td>@twitter</td>-->
+<!--      <td>22</td>-->
+<!--    </tr>-->
+
   </tbody>
 </table>
 </div>

@@ -1,11 +1,15 @@
 from django.shortcuts import render
+from . import rftxt
 
-# Create your views here.
 
 def home(request):
-    print("hello")
-    return render(request, 'host.html')
+    data = rftxt.readunplogs()
+    return render(request, 'host.html', {"datalist": data})
+
 
 def index(request):
-    print("hell")
-    return render(request, 'index.html')
+    data = rftxt.readlogs()
+    return render(request, 'index.html', {"datalist": data})
+
+def activity(request):
+    return render(request, 'activity.html')

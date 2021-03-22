@@ -1,4 +1,5 @@
 <!doctype html>
+	{% load static %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -24,7 +25,7 @@
           <a class="nav-link active" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Activity</a>
+          <a class="nav-link" href="/activity">Activity</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Health</a>
@@ -64,14 +65,14 @@
 						</svg>Host</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+					    <a class="nav-link" href="/home"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
 					  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-					</svg>Link 3</a>
+					</svg>Host Table</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link" href="#" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+					    <a class="nav-link" href="/index" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
 						  <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-						</svg>Link 4</a>
+						</svg>UTM Table</a>
 					  </li>
 					</ul>
     				
@@ -84,34 +85,32 @@
  <h3> Host Table </h3>
  <hr>
  <div class="table-responsive">
+  <h3> Host Table </h3>
   <table class="table">
   <thead class="table-dark">
      <tr>
       <th scope="col">Host Name</th>
       <th scope="col">Host IP</th>
+      <th scope="col">Timestamp</th>
       <th scope="col">Username</th>
       <th scope="col">Password</th>
     </tr>
   </thead>
   <tbody>
+{%for data in datalist%}
     <tr>
       <th scope="row">Devesh-pc</th>
-      <td>192.168.56.101</td>
-      <td>root</td>
-      <td>@mdo</td>
+      <td>10.0.0.1</td>
+      <td>{{data.0}}</td>
+      <td>{{data.1}}</td>
+      <td>{{data.2}}</td>
     </tr>
-    <tr>
-      <th scope="row">Nitish-pc</th>
-      <td>192.168.56.102</td>
-      <td>ubuntu</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">Prajwal-pc</th>
-      <td>192.168.56.103</td>
-      <td>root</td>
-      <td>@twitter</td>
-    </tr>
+{% endfor %}
   </tbody>
 </table>
 </div>
+ </main>
+        </div>
+    </div>
+  </body>
+</html>
